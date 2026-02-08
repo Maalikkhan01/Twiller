@@ -1,0 +1,5 @@
+node_modules
+.env
+.env.*
+config/firebase-service-account.json
+config/firebase.json
