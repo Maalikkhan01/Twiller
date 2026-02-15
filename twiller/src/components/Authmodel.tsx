@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 import { X, Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 
@@ -25,6 +26,7 @@ export default function AuthModal({
   initialMode = "login",
 }: AuthModalProps) {
   const { login, signup, isLoading } = useAuth();
+  const { t } = useTranslation();
   const [mode, setMode] = useState<"login" | "signup">(initialMode);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -41,29 +43,28 @@ export default function AuthModal({
     const newErrors: Record<string, string> = {};
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = t("validation.emailRequired");
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = t("validation.emailInvalid");
     }
 
     if (!formData.password.trim()) {
-      newErrors.password = "Password is required";
+      newErrors.password = t("validation.passwordRequired");
     } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
+      newErrors.password = t("validation.passwordMin");
     }
 
     if (mode === "signup") {
       if (!formData.username.trim()) {
-        newErrors.username = "Username is required";
+        newErrors.username = t("validation.usernameRequired");
       } else if (formData.username.length < 3) {
-        newErrors.username = "Username must be at least 3 characters";
+        newErrors.username = t("validation.usernameMin");
       } else if (!/^[a-zA-Z0-9_]+$/.test(formData.username)) {
-        newErrors.username =
-          "Username can only contain letters, numbers, and underscores";
+        newErrors.username = t("validation.usernamePattern");
       }
 
       if (!formData.displayName.trim()) {
-        newErrors.displayName = "Display name is required";
+        newErrors.displayName = t("validation.displayNameRequired");
       }
     }
 
@@ -90,7 +91,7 @@ export default function AuthModal({
       setFormData({ email: "", password: "", username: "", displayName: "" });
       setErrors({});
     } catch (error) {
-      setErrors({ general: "Authentication failed. Please try again." });
+      setErrors({ general: t("auth.authFailed") });
     }
   };
 
@@ -124,7 +125,9 @@ export default function AuthModal({
               <TwitterLogo size="xl" className="text-white" />
             </div>
             <CardTitle className="text-2xl font-bold">
-              {mode === "login" ? "Sign in to X" : "Create your account"}
+              {mode === "login"
+                ? t("auth.signInTitle")
+                : t("auth.createAccountTitle")}
             </CardTitle>
           </div>
         </CardHeader>
@@ -141,14 +144,14 @@ export default function AuthModal({
               <>
                 <div className="space-y-2">
                   <Label htmlFor="displayName" className="text-white">
-                    Display Name
+                    {t("auth.displayNameLabel")}
                   </Label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                     <Input
                       id="displayName"
                       type="text"
-                      placeholder="Your display name"
+                      placeholder={t("auth.displayNamePlaceholder")}
                       value={formData.displayName}
                       onChange={(e) =>
                         handleInputChange("displayName", e.target.value)
@@ -164,7 +167,7 @@ export default function AuthModal({
 
                 <div className="space-y-2">
                   <Label htmlFor="username" className="text-white">
-                    Username
+                    {t("auth.usernameLabel")}
                   </Label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -173,7 +176,7 @@ export default function AuthModal({
                     <Input
                       id="username"
                       type="text"
-                      placeholder="username"
+                      placeholder={t("auth.usernamePlaceholder")}
                       value={formData.username}
                       onChange={(e) =>
                         handleInputChange("username", e.target.value)
@@ -191,14 +194,14 @@ export default function AuthModal({
 
             <div className="space-y-2">
               <Label htmlFor="email" className="text-white">
-                Email
+                {t("auth.emailLabel")}
               </Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t("auth.emailPlaceholder")}
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   className="pl-10 bg-transparent border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
@@ -212,14 +215,14 @@ export default function AuthModal({
 
             <div className="space-y-2">
               <Label htmlFor="password" className="text-white">
-                Password
+                {t("auth.passwordLabel")}
               </Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
+                  placeholder={t("auth.passwordPlaceholder")}
                   value={formData.password}
                   onChange={(e) =>
                     handleInputChange("password", e.target.value)
@@ -255,13 +258,15 @@ export default function AuthModal({
                 <div className="flex items-center space-x-2">
                   <LoadingSpinner size="sm" />
                   <span>
-                    {mode === "login" ? "Signing in..." : "Creating account..."}
+                    {mode === "login"
+                      ? t("auth.signingIn")
+                      : t("auth.creatingAccount")}
                   </span>
                 </div>
               ) : mode === "login" ? (
-                "Sign in"
+                t("auth.signInButton")
               ) : (
-                "Create account"
+                t("auth.createAccountButton")
               )}
             </Button>
           </form>
@@ -269,30 +274,39 @@ export default function AuthModal({
           <div className="relative">
             <Separator className="bg-gray-700" />
             <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black px-2 text-gray-400 text-sm">
-              OR
+              {t("common.orUpper")}
             </span>
           </div>
 
           <div className="text-center">
             <p className="text-gray-400">
-              {mode === "login"
-                ? "Don't have an account?"
-                : "Already have an account?"}
+              {mode === "login" ? t("auth.noAccount") : t("auth.hasAccount")}
               <Button
                 variant="link"
                 className="text-blue-400 hover:text-blue-300 font-semibold pl-1"
                 onClick={switchMode}
                 disabled={isLoading}
               >
-                {mode === "login" ? "Sign up" : "Sign in"}
+                {mode === "login"
+                  ? t("auth.switchToSignup")
+                  : t("auth.switchToSignin")}
               </Button>
             </p>
           </div>
 
           {mode === "signup" && (
             <div className="text-center text-xs text-gray-400">
-              By signing up, you agree to our Terms of Service and Privacy
-              Policy, including Cookie Use.
+              <Trans
+                i18nKey="legal.signupAgreement"
+                components={[
+                  <span key="text" />,
+                  <span key="terms" />,
+                  <span key="and" />,
+                  <span key="privacy" />,
+                  <span key="comma" />,
+                  <span key="cookie" />,
+                ]}
+              />
             </div>
           )}
         </CardContent>

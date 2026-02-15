@@ -1,0 +1,267 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "or": "or",
+    "orUpper": "OR",
+    "save": "Save",
+    "saving": "Saving...",
+    "post": "Post",
+    "posting": "Posting...",
+    "cancel": "Cancel",
+    "close": "Close",
+    "search": "Search"
+  },
+  "languages": {
+    "english": "English",
+    "spanish": "Spanish",
+    "hindi": "Hindi",
+    "portuguese": "Portuguese",
+    "chinese": "Chinese",
+    "french": "French"
+  },
+  "landing": {
+    "happeningNow": "Happening now",
+    "joinToday": "Join today.",
+    "signUpGoogle": "Sign up with Google",
+    "signUpApple": "Sign up with Apple",
+    "createAccount": "Create account",
+    "alreadyHaveAccount": "Already have an account?",
+    "logIn": "Log in"
+  },
+  "legal": {
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "cookieUse": "Cookie Use",
+    "cookiePolicy": "Cookie Policy",
+    "accessibility": "Accessibility",
+    "adsInfo": "Ads info",
+    "signupAgreement": "By signing up, you agree to the <1>Terms of Service</1> and <3>Privacy Policy</3>, including <5>Cookie Use</5>."
+  },
+  "auth": {
+    "signInTitle": "Sign in to X",
+    "createAccountTitle": "Create your account",
+    "displayNameLabel": "Display Name",
+    "usernameLabel": "Username",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "displayNamePlaceholder": "Your display name",
+    "usernamePlaceholder": "username",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "signInButton": "Sign in",
+    "createAccountButton": "Create account",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account...",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "switchToSignup": "Sign up",
+    "switchToSignin": "Sign in",
+    "authFailed": "Authentication failed. Please try again.",
+    "loginSecurityTitle": "Verify your login",
+    "loginSecurityDescription": "Enter the 6-digit code sent to your registered email."
+  },
+  "validation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email",
+    "passwordRequired": "Password is required",
+    "passwordMin": "Password must be at least 6 characters",
+    "usernameRequired": "Username is required",
+    "usernameMin": "Username must be at least 3 characters",
+    "usernamePattern": "Username can only contain letters, numbers, and underscores",
+    "displayNameRequired": "Display name is required",
+    "displayNameMax": "Display name must be 50 characters or less",
+    "bioMax": "Bio must be 160 characters or less",
+    "websiteMax": "Website must be 100 characters or less",
+    "locationMax": "Location must be 30 characters or less",
+    "profileUpdateFailed": "Failed to update profile. Please try again.",
+    "generic": "Something went wrong. Please try again later."
+  },
+  "feed": {
+    "home": "Home",
+    "forYou": "For you",
+    "following": "Following"
+  },
+  "sidebar": {
+    "home": "Home",
+    "explore": "Explore",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "bookmarks": "Bookmarks",
+    "profile": "Profile",
+    "more": "More",
+    "post": "Post",
+    "settings": "Settings",
+    "logout": "Log out @{{username}}"
+  },
+  "rightSidebar": {
+    "searchPlaceholder": "Search",
+    "subscribeTitle": "Subscribe to Premium",
+    "subscribeBody": "Subscribe to unlock new features and if eligible, receive a share of revenue.",
+    "subscribeButton": "Subscribe",
+    "youMightLike": "You might like",
+    "follow": "Follow",
+    "showMore": "Show more"
+  },
+  "footer": {
+    "copy": "(c) 2026 X AMK"
+  },
+  "tweet": {
+    "placeholder": "What's happening?",
+    "everyoneCanReply": "Everyone can reply",
+    "imageAlt": "Tweet image",
+    "userFallback": "User",
+    "handleFallback": "user",
+    "audio": {
+      "label": "Audio Tweet",
+      "windowOpen": "Window Open (2 PM - 7 PM IST)",
+      "windowClosed": "Window Closed (2 PM - 7 PM IST)",
+      "record": "Record Audio",
+      "stopRecording": "Stop Recording",
+      "upload": "Upload Audio",
+      "sendOtp": "Send OTP",
+      "sendingOtp": "Sending OTP...",
+      "enterOtp": "Enter 6-digit OTP",
+      "verifyOtp": "Verify OTP",
+      "verifyingOtp": "Verifying...",
+      "ready": "Audio ready: {{name}} ({{seconds}}s). Complete OTP verification to post.",
+      "invalidFile": "Invalid audio file.",
+      "recordingNotSupported": "Audio recording is not supported in this browser.",
+      "permissionRequired": "Microphone permission is required to record audio.",
+      "selectFirst": "Select or record an audio file first.",
+      "windowError": "Audio tweets are allowed only between 2 PM and 7 PM IST.",
+      "otpSent": "OTP sent to your registered email address.",
+      "otpFailed": "Failed to send OTP.",
+      "otpInvalid": "Enter a valid 6-digit OTP.",
+      "otpVerified": "OTP verified successfully.",
+      "otpVerifyFailed": "OTP verification failed.",
+      "postFailed": "Failed to post audio tweet.",
+      "postButton": "Post Audio Tweet",
+      "posting": "Posting Audio...",
+      "fallbackContent": "Audio tweet",
+      "sizeError": "Audio file size must be 100MB or less.",
+      "durationError": "Audio duration must be 5 minutes or less.",
+      "durationReadError": "Unable to validate audio duration.",
+      "readError": "Unable to read selected audio file.",
+      "useRecordedError": "Unable to use recorded audio.",
+      "recordingStarted": "Recording started.",
+      "noSupport": "Your browser does not support audio playback."
+    }
+  },
+  "profile": {
+    "postsCount_one": "{{count}} post",
+    "postsCount_other": "{{count}} posts",
+    "editProfile": "Edit profile",
+    "joined": "Joined {{date}}",
+    "enableKeywordNotifications": "Enable Keyword Notifications",
+    "keywordNotificationsDesc": "Alerts for tweets about cricket or science.",
+    "toggleOn": "ON",
+    "toggleOff": "OFF",
+    "loginHistory": {
+      "title": "Login History",
+      "device": "Device",
+      "browser": "Browser",
+      "os": "OS",
+      "ip": "IP",
+      "dateTime": "Date & Time",
+      "empty": "No login activity yet.",
+      "loadMore": "Load more"
+    },
+    "tabs": {
+      "posts": "Posts",
+      "replies": "Replies",
+      "highlights": "Highlights",
+      "articles": "Articles",
+      "media": "Media"
+    },
+    "empty": {
+      "posts": {
+        "title": "You haven't posted yet",
+        "subtitle": "When you post, it will show up here."
+      },
+      "replies": {
+        "title": "You haven't replied yet",
+        "subtitle": "When you reply to a post, it will show up here."
+      },
+      "highlights": {
+        "title": "Lights, camera … attachments!",
+        "subtitle": "When you post photos or videos, they will show up here."
+      },
+      "articles": {
+        "title": "You haven't written any articles",
+        "subtitle": "When you write articles, they will show up here."
+      },
+      "media": {
+        "title": "Lights, camera … attachments!",
+        "subtitle": "When you post photos or videos, they will show up here."
+      }
+    }
+  },
+  "editProfile": {
+    "title": "Edit profile",
+    "save": "Save",
+    "saving": "Saving...",
+    "nameLabel": "Name",
+    "bioLabel": "Bio",
+    "locationLabel": "Location",
+    "websiteLabel": "Website",
+    "displayNamePlaceholder": "Your display name",
+    "bioPlaceholder": "Tell the world about yourself",
+    "locationPlaceholder": "Where are you located?",
+    "websitePlaceholder": "Your website URL"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "currentPlan": "Current plan: {{plan}}",
+    "paymentWindowInfo": "Payments are available only between 10 AM and 11 AM IST.",
+    "unlimited": "Unlimited",
+    "tweetLimitLabel": "Tweet limit: {{limit}}",
+    "renewsEvery_one": "Renews every {{count}} month",
+    "renewsEvery_other": "Renews every {{count}} months",
+    "freePlan": "Free Plan",
+    "subscribe": "Subscribe",
+    "currentPlanButton": "Current Plan",
+    "unavailable": "Unavailable",
+    "loginRequired": "Please log in to subscribe.",
+    "paymentWindowClosed": "Payments are allowed only between 10 AM and 11 AM IST.",
+    "gatewayFailed": "Payment gateway failed to load.",
+    "paymentOpened": "Payment window opened. Complete payment to activate.",
+    "paymentStartFailed": "Unable to start payment. Please try again."
+  },
+  "forgot": {
+    "title": "Forgot password",
+    "description": "Enter the email or phone number linked to your account.",
+    "placeholder": "Email or phone number",
+    "sendButton": "Send new password",
+    "sending": "Sending...",
+    "limitInfo": "Reset requests are limited to once per day.",
+    "success": "If an account exists, a password has been sent.",
+    "errorEmpty": "Please enter your email or phone number.",
+    "errorTooMany": "You can use this option only one time per day.",
+    "errorGeneric": "Something went wrong. Please try again later."
+  },
+  "language": {
+    "title": "Language",
+    "description": "Choose your preferred language. OTP verification is required.",
+    "current": "Current language: {{language}}",
+    "selectLabel": "Select language",
+    "otpTitle": "Verify language change",
+    "otpDescriptionEmail": "Enter the code sent to your registered email.",
+    "otpDescriptionSms": "Enter the code sent to your registered mobile number.",
+    "otpPlaceholder": "Enter 6-digit OTP",
+    "sendOtp": "Send OTP",
+    "sendingOtp": "Sending OTP...",
+    "verifyOtp": "Verify OTP",
+    "verifyingOtp": "Verifying...",
+    "cancel": "Cancel",
+    "otpSent": "If eligible, a code has been sent.",
+    "otpSendFailed": "Unable to send OTP. Please try again.",
+    "otpVerifyFailed": "OTP verification failed.",
+    "otpInvalid": "Enter a valid 6-digit OTP.",
+    "updateSuccess": "Language updated.",
+    "updateFailed": "Unable to update language.",
+    "resend": "Resend OTP"
+  },
+  "notifications": {
+    "keywordAlert": "Keyword Alert"
+  }
+}

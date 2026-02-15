@@ -1,86 +1,135 @@
 "use client";
 
 import { Search } from "lucide-react";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-
-const suggestions = [
-  {
-    id: "1",
-    username: "salmankhan",
-    displayName: "Salman Khan",
-    avatar:
-      "https://www.bollywoodhungama.com/wp-content/uploads/2025/07/620x450-8412.jpg",
-    verified: true,
-  },
-  {
-    id: "2",
-    username: "abdulmaalikkhan",
-    displayName: "Abdul Maalik Khan",
-    avatar:
-      "https://images.pexels.com/photos/1382735/pexels-photo-1382735.jpeg?auto=compress&cs=tinysrgb&w=400",
-    verified: true,
-  },
-  {
-    id: "3",
-    username: "apjabdulkalam",
-    displayName: "President of India",
-    avatar:
-      "https://vskills.in/certification/blog/wp-content/uploads/2015/07/Dr.-Abdul-Kalam.jpg",
-    verified: true,
-  },
-];
+import { useTranslation } from "react-i18next";
+import axiosInstance from "@/lib/axiosInstance";
+import { useAuth } from "@/context/AuthContext";
 
 export default function RightSidebar() {
+  const { t } = useTranslation();
+  const { user } = useAuth();
+  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [followingIds, setFollowingIds] = useState<Set<string>>(new Set());
+  const [followLoadingById, setFollowLoadingById] = useState<Record<string, boolean>>({});
+  const [feedback, setFeedback] = useState("");
+
+  const fetchSuggestions = useCallback(async () => {
+    if (!user?._id) return;
+    try {
+      const res = await axiosInstance.get("/users/suggested");
+      setSuggestions(Array.isArray(res.data) ? res.data : []);
+    } catch (error: any) {
+      setFeedback(error?.response?.data?.message || "Unable to load suggestions.");
+    }
+  }, [user?._id]);
+
+  const fetchFollowing = useCallback(async () => {
+    if (!user?._id) return;
+    try {
+      const res = await axiosInstance.get("/api/v2/users/me");
+      const following = Array.isArray(res.data?.following)
+        ? res.data.following.map((id: any) => String(id))
+        : [];
+      setFollowingIds(new Set(following));
+    } catch (error: any) {
+      setFeedback(error?.response?.data?.message || "Unable to load follow state.");
+    }
+  }, [user?._id]);
+
+  useEffect(() => {
+    if (!user?._id) return;
+    void fetchSuggestions();
+    void fetchFollowing();
+  }, [fetchFollowing, fetchSuggestions, user?._id]);
+
+  const toggleFollow = async (targetUserId: string) => {
+    if (!targetUserId || followLoadingById[targetUserId]) return;
+    const currentlyFollowing = followingIds.has(targetUserId);
+    setFollowLoadingById((prev) => ({ ...prev, [targetUserId]: true }));
+    setFeedback("");
+    try {
+      if (currentlyFollowing) {
+        await axiosInstance.delete(`/api/v2/users/${targetUserId}/follow`);
+      } else {
+        await axiosInstance.post(`/api/v2/users/${targetUserId}/follow`);
+      }
+      setFollowingIds((prev) => {
+        const next = new Set(prev);
+        if (currentlyFollowing) {
+          next.delete(targetUserId);
+        } else {
+          next.add(targetUserId);
+        }
+        return next;
+      });
+      setFeedback(currentlyFollowing ? "Unfollowed." : "Following.");
+    } catch (error: any) {
+      setFeedback(error?.response?.data?.message || "Unable to update follow.");
+    } finally {
+      setFollowLoadingById((prev) => ({ ...prev, [targetUserId]: false }));
+    }
+  };
+
   return (
-    <div className="w-80 p-4 space-y-4">
-      {/* Search */}
+    <div className="w-full space-y-4 px-1 py-1">
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+        <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
         <Input
-          placeholder="Search"
-          className="pl-12 bg-black border-gray-800 text-white placeholder-gray-400 rounded-full py-3"
+          placeholder={t("rightSidebar.searchPlaceholder")}
+          className="h-11 rounded-full border-gray-800 bg-black pl-12 text-white placeholder:text-gray-500"
         />
       </div>
 
-      <Card className="bg-black border-gray-800">
+      <Card className="rounded-2xl border-gray-800 bg-[#0f1419] py-0 shadow-[0_10px_24px_rgba(0,0,0,0.2)]">
         <CardContent className="p-4">
-          <h3 className="text-white text-xl font-bold mb-2">
-            Subscribe to Premium
+          <h3 className="mb-2 text-xl font-bold text-white">
+            {t("rightSidebar.subscribeTitle")}
           </h3>
-          <p className="text-gray-400 text-sm mb-4">
-            Subscribe to unlock new features and if eligible, receive a share of
-            revenue.
+          <p className="mb-4 text-sm text-gray-400">
+            {t("rightSidebar.subscribeBody")}
           </p>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full">
-            Subscribe
+          <Button className="h-11 rounded-full bg-blue-500 font-semibold text-white transition-colors duration-150 hover:bg-blue-600">
+            {t("rightSidebar.subscribeButton")}
           </Button>
         </CardContent>
       </Card>
 
-      <Card className="bg-black border-gray-800">
+      <Card className="rounded-2xl border-gray-800 bg-[#0f1419] py-0 shadow-[0_10px_24px_rgba(0,0,0,0.2)]">
         <CardContent className="p-4">
-          <h3 className="text-white text-xl font-bold mb-4">You might like</h3>
+          <h3 className="mb-4 text-xl font-bold text-white">
+            {t("rightSidebar.youMightLike")}
+          </h3>
+          {feedback && <p className="mb-3 text-xs text-blue-300">{feedback}</p>}
           <div className="space-y-4">
-            {suggestions.map((user) => (
-              <div key={user.id} className="flex items-center justify-between">
+            {suggestions.map((suggestion) => (
+              <div key={suggestion._id || suggestion.username} className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <Avatar className="h-10 w-10">
-                    <AvatarImage src={user.avatar} alt={user.displayName} />
-                    <AvatarFallback>{user.displayName[0]}</AvatarFallback>
+                    <AvatarImage
+                      src={
+                        suggestion.avatar ||
+                        `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(
+                          suggestion.username || suggestion.displayName || "user",
+                        )}`
+                      }
+                      alt={suggestion.displayName}
+                    />
+                    <AvatarFallback>{(suggestion.displayName || "U")[0]}</AvatarFallback>
                   </Avatar>
                   <div>
                     <div className="flex items-center space-x-1">
-                      <span className="text-white font-semibold">
-                        {user.displayName}
+                      <span className="font-semibold text-white">
+                        {suggestion.displayName || suggestion.username}
                       </span>
-                      {user.verified && (
-                        <div className="bg-blue-500 rounded-full p-0.5">
+                      {suggestion.verified && (
+                        <div className="rounded-full bg-blue-500 p-0.5">
                           <svg
-                            className="h-3 w-3 text-white fill-current"
+                            className="h-3 w-3 fill-current text-white"
                             viewBox="0 0 20 20"
                           >
                             <path d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
@@ -88,49 +137,52 @@ export default function RightSidebar() {
                         </div>
                       )}
                     </div>
-                    <span className="text-gray-400 text-sm">
-                      @{user.username}
-                    </span>
+                    <span className="text-sm text-gray-400">@{suggestion.username}</span>
                   </div>
                 </div>
                 <Button
                   variant="outline"
-                  className="bg-white text-black hover:bg-gray-200 font-semibold rounded-full px-4"
+                  disabled={!suggestion._id || followLoadingById[suggestion._id]}
+                  onClick={() => void toggleFollow(String(suggestion._id))}
+                  className="h-11 rounded-full bg-white px-4 font-semibold text-black transition-colors duration-150 hover:bg-gray-200 disabled:bg-gray-300 disabled:text-gray-700"
                 >
-                  Follow
+                  {followLoadingById[suggestion._id]
+                    ? "..."
+                    : followingIds.has(String(suggestion._id))
+                      ? "Following"
+                      : t("rightSidebar.follow")}
                 </Button>
               </div>
             ))}
           </div>
           <Button
             variant="ghost"
-            className="text-blue-400 hover:text-blue-300 p-0 mt-4"
+            className="mt-4 h-11 p-0 text-blue-400 transition-colors duration-150 hover:text-blue-300"
           >
-            Show more
+            {t("rightSidebar.showMore")}
           </Button>
         </CardContent>
       </Card>
 
-      {/* Footer */}
-      <div className="p-4 text-xs text-gray-500 space-y-2">
+      <div className="space-y-2 p-4 text-xs text-gray-500">
         <div className="flex flex-wrap gap-x-3 gap-y-1">
           <a href="#" className="hover:underline">
-            Terms of Service
+            {t("legal.termsOfService")}
           </a>
           <a href="#" className="hover:underline">
-            Privacy Policy
+            {t("legal.privacyPolicy")}
           </a>
           <a href="#" className="hover:underline">
-            Cookie Policy
+            {t("legal.cookiePolicy")}
           </a>
           <a href="#" className="hover:underline">
-            Accessibility
+            {t("legal.accessibility")}
           </a>
           <a href="#" className="hover:underline">
-            Ads info
+            {t("legal.adsInfo")}
           </a>
         </div>
-        <div>© 2026 X AMK</div>
+        <div>{t("footer.copy")}</div>
       </div>
     </div>
   );

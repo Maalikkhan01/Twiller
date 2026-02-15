@@ -9,10 +9,17 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import LoadingSpinner from "./loading-spinner";
 import axiosInstance from "@/lib/axiosInstance";
+import { useTranslation } from "react-i18next";
 
 const Editprofile = ({ isopen, onclose }: any) => {
   const { user, updateProfile } = useAuth();
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
+  const avatarSeed =
+    user?.username || user?.email || user?.displayName || "user";
+  const fallbackAvatar = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(
+    avatarSeed,
+  )}`;
   const [formData, setFormdata] = useState({
     displayName: user?.displayName || "",
     bio: user?.bio || "",
@@ -22,25 +29,26 @@ const Editprofile = ({ isopen, onclose }: any) => {
   });
   const [error, setError] = useState<any>({});
   if (!isopen || !user) return null;
+  const previewAvatar = formData.avatar || user?.avatar || fallbackAvatar;
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.displayName.trim()) {
-      newErrors.displayName = "Display name is required";
+      newErrors.displayName = t("validation.displayNameRequired");
     } else if (formData.displayName.length > 50) {
-      newErrors.displayName = "Display name must be 50 characters or less";
+      newErrors.displayName = t("validation.displayNameMax");
     }
 
     if (formData.bio.length > 160) {
-      newErrors.bio = "Bio must be 160 characters or less";
+      newErrors.bio = t("validation.bioMax");
     }
 
     if (formData.website && formData.website.length > 100) {
-      newErrors.website = "Website must be 100 characters or less";
+      newErrors.website = t("validation.websiteMax");
     }
 
     if (formData.location && formData.location.length > 30) {
-      newErrors.location = "Location must be 30 characters or less";
+      newErrors.location = t("validation.locationMax");
     }
 
     setError(newErrors);
@@ -56,7 +64,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
       await updateProfile(formData);
       onclose();
     } catch (error) {
-      setError({ general: "Failed to update profile. Please try again." });
+      setError({ general: t("validation.profileUpdateFailed") });
     } finally {
       setIsLoading(false);
     }
@@ -104,7 +112,9 @@ const Editprofile = ({ isopen, onclose }: any) => {
               >
                 <X className="h-5 w-5" />
               </Button>
-              <CardTitle className="text-xl font-bold">Edit profile</CardTitle>
+              <CardTitle className="text-xl font-bold">
+                {t("editProfile.title")}
+              </CardTitle>
             </div>
             <Button
               type="submit"
@@ -115,10 +125,10 @@ const Editprofile = ({ isopen, onclose }: any) => {
               {isLoading ? (
                 <div className="flex items-center space-x-2">
                   <LoadingSpinner size="sm" />
-                  <span>Saving...</span>
+                  <span>{t("editProfile.saving")}</span>
                 </div>
               ) : (
-                "Save"
+                t("editProfile.save")
               )}
             </Button>
           </div>
@@ -134,7 +144,10 @@ const Editprofile = ({ isopen, onclose }: any) => {
           <form id="edit-profile-form" onSubmit={handleSubmit}>
             {/* Cover Photo */}
             <div className="relative">
-              <div className="h-48 bg-gradient-to-r from-blue-600 to-purple-600 relative">
+              <div
+                className="h-48 bg-cover bg-center relative"
+                style={{ backgroundImage: "url('/cover-placeholder.svg')" }}
+              >
                 <Button
                   type="button"
                   variant="ghost"
@@ -150,7 +163,10 @@ const Editprofile = ({ isopen, onclose }: any) => {
               <div className="absolute -bottom-16 left-4">
                 <div className="relative">
                   <Avatar className="h-32 w-32 border-4 border-black">
-                    <AvatarImage src={user?.avatar} alt={user?.displayName} />
+                    <AvatarImage
+                      src={previewAvatar}
+                      alt={user?.displayName}
+                    />
                     <AvatarFallback className="text-2xl">
                       {user?.displayName?.[0]}
                     </AvatarFallback>
@@ -182,7 +198,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
               {/* Display Name */}
               <div className="space-y-2">
                 <Label htmlFor="displayName" className="text-white">
-                  Name
+                  {t("editProfile.nameLabel")}
                 </Label>
                 <Input
                   id="displayName"
@@ -192,7 +208,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
                     handleInputChange("displayName", e.target.value)
                   }
                   className="bg-transparent border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-                  placeholder="Your display name"
+                  placeholder={t("editProfile.displayNamePlaceholder")}
                   maxLength={50}
                   disabled={isLoading}
                 />
@@ -209,14 +225,14 @@ const Editprofile = ({ isopen, onclose }: any) => {
               {/* Bio */}
               <div className="space-y-2">
                 <Label htmlFor="bio" className="text-white">
-                  Bio
+                  {t("editProfile.bioLabel")}
                 </Label>
                 <Textarea
                   id="bio"
                   value={formData.bio}
                   onChange={(e) => handleInputChange("bio", e.target.value)}
                   className="bg-transparent border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 resize-none min-h-[100px]"
-                  placeholder="Tell the world about yourself"
+                  placeholder={t("editProfile.bioPlaceholder")}
                   maxLength={160}
                   disabled={isLoading}
                 />
@@ -231,7 +247,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
               {/* Location */}
               <div className="space-y-2">
                 <Label htmlFor="location" className="text-white">
-                  Location
+                  {t("editProfile.locationLabel")}
                 </Label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -243,7 +259,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
                       handleInputChange("location", e.target.value)
                     }
                     className="pl-10 bg-transparent border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-                    placeholder="Where are you located?"
+                    placeholder={t("editProfile.locationPlaceholder")}
                     maxLength={30}
                     disabled={isLoading}
                   />
@@ -261,7 +277,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
               {/* Website */}
               <div className="space-y-2">
                 <Label htmlFor="website" className="text-white">
-                  Website
+                  {t("editProfile.websiteLabel")}
                 </Label>
                 <div className="relative">
                   <LinkIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -273,7 +289,7 @@ const Editprofile = ({ isopen, onclose }: any) => {
                       handleInputChange("website", e.target.value)
                     }
                     className="pl-10 bg-transparent border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-                    placeholder="Your website URL"
+                    placeholder={t("editProfile.websitePlaceholder")}
                     maxLength={100}
                     disabled={isLoading}
                   />

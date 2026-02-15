@@ -119,6 +119,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-black text-foreground;
+    @apply bg-black text-foreground antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-wrap-anywhere {
+    overflow-wrap: anywhere;
   }
 }

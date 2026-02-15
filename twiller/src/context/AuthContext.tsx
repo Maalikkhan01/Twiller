@@ -14,9 +14,13 @@ import React, {
   useEffect,
   useRef,
   useState,
+  useCallback,
 } from "react";
 import { auth } from "./firebase";
 import axiosInstance from "@/lib/axiosInstance";
+import { useTranslation } from "react-i18next";
+import LoginSecurityOtpModal from "@/components/LoginSecurityOtpModal";
+import { closeSocket } from "@/lib/socket";
 
 interface User {
   _id: string;
@@ -28,6 +32,9 @@ interface User {
   email: string;
   website: string;
   location: string;
+  notificationPreferences?: {
+    keywordNotifications?: boolean;
+  };
 }
 
 interface AuthContextType {
@@ -45,6 +52,9 @@ interface AuthContextType {
     location: string;
     website: string;
     avatar: string;
+  }) => Promise<void>;
+  updateNotificationPreferences: (preferences: {
+    keywordNotifications: boolean;
   }) => Promise<void>;
   logout: () => Promise<void>;
   isLoading: boolean;
@@ -64,15 +74,84 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const skipNextFetch = useRef(false);
+  const [otpRequired, setOtpRequired] = useState(false);
+  const [otpSending, setOtpSending] = useState(false);
+  const [otpVerifying, setOtpVerifying] = useState(false);
+  const [otpError, setOtpError] = useState("");
+  const [otpInfo, setOtpInfo] = useState("");
+
+  const requestLoginOtp = useCallback(async () => {
+    setOtpSending(true);
+    setOtpError("");
+    try {
+      await axiosInstance.post("/login-security/send-otp");
+      setOtpInfo(t("language.otpSent"));
+    } catch {
+      setOtpError(t("language.otpSendFailed"));
+    } finally {
+      setOtpSending(false);
+    }
+  }, [t]);
+
+  const verifyLoginOtp = useCallback(
+    async (otp: string) => {
+      setOtpVerifying(true);
+      setOtpError("");
+      try {
+        await axiosInstance.post("/login-security/verify-otp", { otp });
+        setOtpRequired(false);
+        setOtpInfo("");
+
+        const res = await axiosInstance.get("/loggedinuser");
+        if (res.data) {
+          setUser(res.data);
+          localStorage.setItem("twitter-user", JSON.stringify(res.data));
+        }
+      } catch (err: any) {
+        if (err?.response?.status === 404 && auth.currentUser?.email) {
+          const newUser = {
+            username: auth.currentUser.email.split("@")[0],
+            displayName: auth.currentUser.displayName || "User",
+            avatar:
+              auth.currentUser.photoURL || "https://i.pravatar.cc/150",
+            email: auth.currentUser.email,
+          };
+          const registerRes = await axiosInstance.post("/register", newUser);
+          setUser(registerRes.data);
+          localStorage.setItem(
+            "twitter-user",
+            JSON.stringify(registerRes.data),
+          );
+          setOtpRequired(false);
+          setOtpInfo("");
+        } else if (err?.response?.data?.requiresOtp) {
+          setOtpRequired(true);
+          setOtpError("");
+          setOtpInfo("");
+          void requestLoginOtp();
+        } else {
+          setOtpError(t("language.otpVerifyFailed"));
+        }
+      } finally {
+        setOtpVerifying(false);
+      }
+    },
+    [requestLoginOtp, t],
+  );
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (!firebaseUser?.email) {
         setUser(null);
         localStorage.removeItem("twitter-user");
+        closeSocket();
+        setOtpRequired(false);
+        setOtpError("");
+        setOtpInfo("");
         setIsLoading(false);
         return;
       }
@@ -88,6 +167,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         if (res.data) {
           setUser(res.data);
           localStorage.setItem("twitter-user", JSON.stringify(res.data));
+          setOtpRequired(false);
+          setOtpError("");
+          setOtpInfo("");
         }
       } catch (err: any) {
         if (err?.response?.status === 404) {
@@ -103,6 +185,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
             "twitter-user",
             JSON.stringify(registerRes.data),
           );
+          setOtpRequired(false);
+          setOtpError("");
+          setOtpInfo("");
+        } else if (err?.response?.status === 403) {
+          const message = String(err?.response?.data?.message || "");
+          if (err?.response?.data?.requiresOtp) {
+            setOtpRequired(true);
+            setOtpError("");
+            setOtpInfo("");
+            void requestLoginOtp();
+          } else if (
+            message ===
+            "Mobile login is allowed only between 10 AM and 1 PM IST."
+          ) {
+            alert(message);
+            await signOut(auth);
+            setUser(null);
+            localStorage.removeItem("twitter-user");
+          } else {
+            console.log("Failed to fetch user:", err);
+          }
         } else {
           console.log("Failed to fetch user:", err);
         }
@@ -111,7 +214,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [requestLoginOtp]);
 
   const login = async (email: string, password: string) => {
     setIsLoading(true);
@@ -166,6 +269,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       await signOut(auth);
       setUser(null);
       localStorage.removeItem("twitter-user");
+      closeSocket();
     } finally {
       setIsLoading(false);
     }
@@ -185,6 +289,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       const res = await axiosInstance.patch(
         `/userupdate/${user.email}`,
         profileData,
+      );
+      if (res.data) {
+        setUser(res.data);
+        localStorage.setItem("twitter-user", JSON.stringify(res.data));
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const updateNotificationPreferences = async (preferences: {
+    keywordNotifications: boolean;
+  }) => {
+    if (!user) return;
+
+    setIsLoading(true);
+    try {
+      const res = await axiosInstance.patch(
+        "/notification-preferences",
+        preferences,
       );
       if (res.data) {
         setUser(res.data);
@@ -218,12 +342,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         login,
         signup,
         updateProfile,
+        updateNotificationPreferences,
         logout,
         isLoading,
         googlesignin,
       }}
     >
       {children}
+      <LoginSecurityOtpModal
+        isOpen={otpRequired}
+        isSending={otpSending}
+        isVerifying={otpVerifying}
+        error={otpError}
+        infoMessage={otpInfo}
+        onSubmit={verifyLoginOtp}
+        onResend={requestLoginOtp}
+        onCancel={() => void logout()}
+      />
     </AuthContext.Provider>
   );
 };

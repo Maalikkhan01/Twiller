@@ -1,0 +1,267 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "or": "o",
+    "orUpper": "O",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "post": "Publicar",
+    "posting": "Publicando...",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "search": "Buscar"
+  },
+  "languages": {
+    "english": "Inglés",
+    "spanish": "Español",
+    "hindi": "Hindi",
+    "portuguese": "Portugués",
+    "chinese": "Chino",
+    "french": "Francés"
+  },
+  "landing": {
+    "happeningNow": "Está pasando ahora",
+    "joinToday": "Únete hoy.",
+    "signUpGoogle": "Regístrate con Google",
+    "signUpApple": "Regístrate con Apple",
+    "createAccount": "Crear cuenta",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "logIn": "Iniciar sesión"
+  },
+  "legal": {
+    "termsOfService": "Términos de servicio",
+    "privacyPolicy": "Política de privacidad",
+    "cookieUse": "Uso de cookies",
+    "cookiePolicy": "Política de cookies",
+    "accessibility": "Accesibilidad",
+    "adsInfo": "Información de anuncios",
+    "signupAgreement": "Al registrarte, aceptas los <1>Términos de servicio</1> y la <3>Política de privacidad</3>, incluido el <5>Uso de cookies</5>."
+  },
+  "auth": {
+    "signInTitle": "Inicia sesión en X",
+    "createAccountTitle": "Crea tu cuenta",
+    "displayNameLabel": "Nombre para mostrar",
+    "usernameLabel": "Nombre de usuario",
+    "emailLabel": "Correo electrónico",
+    "passwordLabel": "Contraseña",
+    "displayNamePlaceholder": "Tu nombre para mostrar",
+    "usernamePlaceholder": "nombredeusuario",
+    "emailPlaceholder": "Introduce tu correo electrónico",
+    "passwordPlaceholder": "Introduce tu contraseña",
+    "signInButton": "Iniciar sesión",
+    "createAccountButton": "Crear cuenta",
+    "signingIn": "Iniciando sesión...",
+    "creatingAccount": "Creando cuenta...",
+    "noAccount": "¿No tienes una cuenta?",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "switchToSignup": "Regístrate",
+    "switchToSignin": "Iniciar sesión",
+    "authFailed": "La autenticación falló. Inténtalo de nuevo.",
+    "loginSecurityTitle": "Verify your login",
+    "loginSecurityDescription": "Enter the 6-digit code sent to your registered email."
+  },
+  "validation": {
+    "emailRequired": "El correo electrónico es obligatorio",
+    "emailInvalid": "Introduce un correo electrónico válido",
+    "passwordRequired": "La contraseña es obligatoria",
+    "passwordMin": "La contraseña debe tener al menos 6 caracteres",
+    "usernameRequired": "El nombre de usuario es obligatorio",
+    "usernameMin": "El nombre de usuario debe tener al menos 3 caracteres",
+    "usernamePattern": "El nombre de usuario solo puede contener letras, números y guiones bajos",
+    "displayNameRequired": "El nombre para mostrar es obligatorio",
+    "displayNameMax": "El nombre para mostrar debe tener 50 caracteres o menos",
+    "bioMax": "La biografía debe tener 160 caracteres o menos",
+    "websiteMax": "El sitio web debe tener 100 caracteres o menos",
+    "locationMax": "La ubicación debe tener 30 caracteres o menos",
+    "profileUpdateFailed": "No se pudo actualizar el perfil. Inténtalo de nuevo.",
+    "generic": "Algo salió mal. Inténtalo más tarde."
+  },
+  "feed": {
+    "home": "Inicio",
+    "forYou": "Para ti",
+    "following": "Siguiendo"
+  },
+  "sidebar": {
+    "home": "Inicio",
+    "explore": "Explorar",
+    "notifications": "Notificaciones",
+    "messages": "Mensajes",
+    "bookmarks": "Marcadores",
+    "profile": "Perfil",
+    "more": "Más",
+    "post": "Publicar",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión @{{username}}"
+  },
+  "rightSidebar": {
+    "searchPlaceholder": "Buscar",
+    "subscribeTitle": "Suscríbete a Premium",
+    "subscribeBody": "Suscríbete para desbloquear nuevas funciones y, si cumples los requisitos, recibir una parte de los ingresos.",
+    "subscribeButton": "Suscribirse",
+    "youMightLike": "Te podría gustar",
+    "follow": "Seguir",
+    "showMore": "Mostrar más"
+  },
+  "footer": {
+    "copy": "(c) 2026 X AMK"
+  },
+  "tweet": {
+    "placeholder": "¿Qué está pasando?",
+    "everyoneCanReply": "Todos pueden responder",
+    "imageAlt": "Imagen del tuit",
+    "userFallback": "Usuario",
+    "handleFallback": "usuario",
+    "audio": {
+      "label": "Tuit de audio",
+      "windowOpen": "Ventana abierta (2 PM - 7 PM IST)",
+      "windowClosed": "Ventana cerrada (2 PM - 7 PM IST)",
+      "record": "Grabar audio",
+      "stopRecording": "Detener grabación",
+      "upload": "Subir audio",
+      "sendOtp": "Enviar OTP",
+      "sendingOtp": "Enviando OTP...",
+      "enterOtp": "Introduce OTP de 6 dígitos",
+      "verifyOtp": "Verificar OTP",
+      "verifyingOtp": "Verificando...",
+      "ready": "Audio listo: {{name}} ({{seconds}}s). Completa la verificación OTP para publicar.",
+      "invalidFile": "Archivo de audio no válido.",
+      "recordingNotSupported": "La grabación de audio no está disponible en este navegador.",
+      "permissionRequired": "Se requiere permiso del micrófono para grabar audio.",
+      "selectFirst": "Selecciona o graba un archivo de audio primero.",
+      "windowError": "Los tuits de audio solo están permitidos entre 2 PM y 7 PM IST.",
+      "otpSent": "OTP enviado a tu correo electrónico registrado.",
+      "otpFailed": "No se pudo enviar el OTP.",
+      "otpInvalid": "Introduce un OTP válido de 6 dígitos.",
+      "otpVerified": "OTP verificado correctamente.",
+      "otpVerifyFailed": "La verificación del OTP falló.",
+      "postFailed": "No se pudo publicar el tuit de audio.",
+      "postButton": "Publicar tuit de audio",
+      "posting": "Publicando audio...",
+      "fallbackContent": "Tuit de audio",
+      "sizeError": "El archivo de audio debe ser de 100 MB o menos.",
+      "durationError": "La duración del audio debe ser de 5 minutos o menos.",
+      "durationReadError": "No se pudo validar la duración del audio.",
+      "readError": "No se pudo leer el archivo de audio seleccionado.",
+      "useRecordedError": "No se pudo usar el audio grabado.",
+      "recordingStarted": "Grabación iniciada.",
+      "noSupport": "Tu navegador no admite la reproducción de audio."
+    }
+  },
+  "profile": {
+    "postsCount_one": "{{count}} publicación",
+    "postsCount_other": "{{count}} publicaciones",
+    "editProfile": "Editar perfil",
+    "joined": "Se unió en {{date}}",
+    "enableKeywordNotifications": "Habilitar notificaciones de palabras clave",
+    "keywordNotificationsDesc": "Alertas para tuits sobre cricket o ciencia.",
+    "toggleOn": "ACTIVADO",
+    "toggleOff": "DESACTIVADO",
+    "loginHistory": {
+      "title": "Login History",
+      "device": "Device",
+      "browser": "Browser",
+      "os": "OS",
+      "ip": "IP",
+      "dateTime": "Date & Time",
+      "empty": "No login activity yet.",
+      "loadMore": "Load more"
+    },
+    "tabs": {
+      "posts": "Publicaciones",
+      "replies": "Respuestas",
+      "highlights": "Destacados",
+      "articles": "Artículos",
+      "media": "Multimedia"
+    },
+    "empty": {
+      "posts": {
+        "title": "Aún no has publicado",
+        "subtitle": "Cuando publiques, aparecerá aquí."
+      },
+      "replies": {
+        "title": "Aún no has respondido",
+        "subtitle": "Cuando respondas a una publicación, aparecerá aquí."
+      },
+      "highlights": {
+        "title": "¡Luces, cámara … adjuntos!",
+        "subtitle": "Cuando publiques fotos o videos, aparecerán aquí."
+      },
+      "articles": {
+        "title": "Aún no has escrito ningún artículo",
+        "subtitle": "Cuando escribas artículos, aparecerán aquí."
+      },
+      "media": {
+        "title": "¡Luces, cámara … adjuntos!",
+        "subtitle": "Cuando publiques fotos o videos, aparecerán aquí."
+      }
+    }
+  },
+  "editProfile": {
+    "title": "Editar perfil",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "nameLabel": "Nombre",
+    "bioLabel": "Bio",
+    "locationLabel": "Ubicación",
+    "websiteLabel": "Sitio web",
+    "displayNamePlaceholder": "Tu nombre para mostrar",
+    "bioPlaceholder": "Cuéntale al mundo sobre ti",
+    "locationPlaceholder": "¿Dónde estás?",
+    "websitePlaceholder": "La URL de tu sitio web"
+  },
+  "pricing": {
+    "title": "Precios",
+    "currentPlan": "Plan actual: {{plan}}",
+    "paymentWindowInfo": "Los pagos solo están disponibles entre 10 AM y 11 AM IST.",
+    "unlimited": "Ilimitado",
+    "tweetLimitLabel": "Límite de tuits: {{limit}}",
+    "renewsEvery_one": "Se renueva cada {{count}} mes",
+    "renewsEvery_other": "Se renueva cada {{count}} meses",
+    "freePlan": "Plan gratuito",
+    "subscribe": "Suscribirse",
+    "currentPlanButton": "Plan actual",
+    "unavailable": "No disponible",
+    "loginRequired": "Inicia sesión para suscribirte.",
+    "paymentWindowClosed": "Los pagos solo están permitidos entre 10 AM y 11 AM IST.",
+    "gatewayFailed": "No se pudo cargar la pasarela de pago.",
+    "paymentOpened": "Se abrió la ventana de pago. Completa el pago para activar.",
+    "paymentStartFailed": "No se pudo iniciar el pago. Inténtalo de nuevo."
+  },
+  "forgot": {
+    "title": "Olvidé mi contraseña",
+    "description": "Introduce el correo electrónico o número de teléfono vinculado a tu cuenta.",
+    "placeholder": "Correo electrónico o número de teléfono",
+    "sendButton": "Enviar nueva contraseña",
+    "sending": "Enviando...",
+    "limitInfo": "Las solicitudes de restablecimiento están limitadas a una vez al día.",
+    "success": "Si existe una cuenta, se ha enviado una contraseña.",
+    "errorEmpty": "Introduce tu correo electrónico o número de teléfono.",
+    "errorTooMany": "Solo puedes usar esta opción una vez al día.",
+    "errorGeneric": "Algo salió mal. Inténtalo más tarde."
+  },
+  "language": {
+    "title": "Idioma",
+    "description": "Elige tu idioma preferido. Se requiere verificación OTP.",
+    "current": "Idioma actual: {{language}}",
+    "selectLabel": "Seleccionar idioma",
+    "otpTitle": "Verificar cambio de idioma",
+    "otpDescriptionEmail": "Introduce el código enviado a tu correo electrónico registrado.",
+    "otpDescriptionSms": "Introduce el código enviado a tu número móvil registrado.",
+    "otpPlaceholder": "Introduce OTP de 6 dígitos",
+    "sendOtp": "Enviar OTP",
+    "sendingOtp": "Enviando OTP...",
+    "verifyOtp": "Verificar OTP",
+    "verifyingOtp": "Verificando...",
+    "cancel": "Cancelar",
+    "otpSent": "Si es elegible, se ha enviado un código.",
+    "otpSendFailed": "No se pudo enviar el OTP. Inténtalo de nuevo.",
+    "otpVerifyFailed": "La verificación del OTP falló.",
+    "otpInvalid": "Introduce un OTP válido de 6 dígitos.",
+    "updateSuccess": "Idioma actualizado.",
+    "updateFailed": "No se pudo actualizar el idioma.",
+    "resend": "Reenviar OTP"
+  },
+  "notifications": {
+    "keywordAlert": "Alerta de palabras clave"
+  }
+}

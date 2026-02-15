@@ -1,6 +1,5 @@
 import admin from "firebase-admin";
 import fs from "fs";
-import path from "path";
 
 const resolveServiceAccount = () => {
   if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
@@ -11,11 +10,9 @@ const resolveServiceAccount = () => {
     }
   }
 
-  const candidatePaths = [
-    process.env.FIREBASE_SERVICE_ACCOUNT_PATH,
-    path.join(process.cwd(), "config", "firebase-service-account.json"),
-    path.join(process.cwd(), "config", "firebase-service-account.json.json"),
-  ].filter(Boolean);
+  const candidatePaths = [process.env.FIREBASE_SERVICE_ACCOUNT_PATH].filter(
+    Boolean,
+  );
 
   for (const candidate of candidatePaths) {
     if (fs.existsSync(candidate)) {
@@ -38,6 +35,16 @@ const ensureFirebaseAdmin = () => {
     credential: admin.credential.cert(serviceAccount),
   });
   return true;
+};
+
+export const getFirebaseAuth = () => {
+  if (!ensureFirebaseAdmin()) {
+    const error = new Error("Firebase admin is not configured");
+    error.statusCode = 500;
+    throw error;
+  }
+
+  return admin.auth();
 };
 
 export const verifyFirebaseToken = async (req, res, next) => {

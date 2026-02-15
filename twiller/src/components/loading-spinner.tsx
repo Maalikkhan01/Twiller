@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface LoadingSpinnerProps {
   size?: "sm" | "md" | "lg";
@@ -10,6 +13,7 @@ export default function LoadingSpinner({
   size = "md",
   className,
 }: LoadingSpinnerProps) {
+  const { t } = useTranslation();
   const sizeClasses = {
     sm: "h-4 w-4",
     md: "h-6 w-6",
@@ -24,7 +28,7 @@ export default function LoadingSpinner({
         className,
       )}
     >
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">{t("common.loading")}</span>
     </div>
   );
 }

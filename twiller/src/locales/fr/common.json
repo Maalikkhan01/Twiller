@@ -1,0 +1,267 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "or": "ou",
+    "orUpper": "OU",
+    "save": "Enregistrer",
+    "saving": "Enregistrement...",
+    "post": "Publier",
+    "posting": "Publication...",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "search": "Rechercher"
+  },
+  "languages": {
+    "english": "Anglais",
+    "spanish": "Espagnol",
+    "hindi": "Hindi",
+    "portuguese": "Portugais",
+    "chinese": "Chinois",
+    "french": "Français"
+  },
+  "landing": {
+    "happeningNow": "Ça se passe maintenant",
+    "joinToday": "Rejoignez-nous aujourd'hui.",
+    "signUpGoogle": "S'inscrire avec Google",
+    "signUpApple": "S'inscrire avec Apple",
+    "createAccount": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "logIn": "Se connecter"
+  },
+  "legal": {
+    "termsOfService": "Conditions d'utilisation",
+    "privacyPolicy": "Politique de confidentialité",
+    "cookieUse": "Utilisation des cookies",
+    "cookiePolicy": "Politique relative aux cookies",
+    "accessibility": "Accessibilité",
+    "adsInfo": "Infos sur les publicités",
+    "signupAgreement": "En vous inscrivant, vous acceptez les <1>Conditions d'utilisation</1> et la <3>Politique de confidentialité</3>, y compris l'<5>Utilisation des cookies</5>."
+  },
+  "auth": {
+    "signInTitle": "Se connecter à X",
+    "createAccountTitle": "Créez votre compte",
+    "displayNameLabel": "Nom d'affichage",
+    "usernameLabel": "Nom d'utilisateur",
+    "emailLabel": "E-mail",
+    "passwordLabel": "Mot de passe",
+    "displayNamePlaceholder": "Votre nom d'affichage",
+    "usernamePlaceholder": "nomutilisateur",
+    "emailPlaceholder": "Saisissez votre e-mail",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "signInButton": "Se connecter",
+    "createAccountButton": "Créer un compte",
+    "signingIn": "Connexion...",
+    "creatingAccount": "Création du compte...",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "switchToSignup": "S'inscrire",
+    "switchToSignin": "Se connecter",
+    "authFailed": "L'authentification a échoué. Veuillez réessayer.",
+    "loginSecurityTitle": "Verify your login",
+    "loginSecurityDescription": "Enter the 6-digit code sent to your registered email."
+  },
+  "validation": {
+    "emailRequired": "L'e-mail est requis",
+    "emailInvalid": "Veuillez saisir un e-mail valide",
+    "passwordRequired": "Le mot de passe est requis",
+    "passwordMin": "Le mot de passe doit contenir au moins 6 caractères",
+    "usernameRequired": "Le nom d'utilisateur est requis",
+    "usernameMin": "Le nom d'utilisateur doit contenir au moins 3 caractères",
+    "usernamePattern": "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres et des underscores",
+    "displayNameRequired": "Le nom d'affichage est requis",
+    "displayNameMax": "Le nom d'affichage doit comporter 50 caractères ou moins",
+    "bioMax": "La bio doit comporter 160 caractères ou moins",
+    "websiteMax": "Le site Web doit comporter 100 caractères ou moins",
+    "locationMax": "Le lieu doit comporter 30 caractères ou moins",
+    "profileUpdateFailed": "Impossible de mettre à jour le profil. Veuillez réessayer.",
+    "generic": "Une erreur s'est produite. Veuillez réessayer plus tard."
+  },
+  "feed": {
+    "home": "Accueil",
+    "forYou": "Pour vous",
+    "following": "Abonnements"
+  },
+  "sidebar": {
+    "home": "Accueil",
+    "explore": "Explorer",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "bookmarks": "Signets",
+    "profile": "Profil",
+    "more": "Plus",
+    "post": "Publier",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter @{{username}}"
+  },
+  "rightSidebar": {
+    "searchPlaceholder": "Rechercher",
+    "subscribeTitle": "Abonnez-vous à Premium",
+    "subscribeBody": "Abonnez-vous pour débloquer de nouvelles fonctionnalités et, si éligible, recevoir une part des revenus.",
+    "subscribeButton": "S'abonner",
+    "youMightLike": "Vous pourriez aimer",
+    "follow": "Suivre",
+    "showMore": "Afficher plus"
+  },
+  "footer": {
+    "copy": "(c) 2026 X AMK"
+  },
+  "tweet": {
+    "placeholder": "Quoi de neuf ?",
+    "everyoneCanReply": "Tout le monde peut répondre",
+    "imageAlt": "Image du tweet",
+    "userFallback": "Utilisateur",
+    "handleFallback": "user",
+    "audio": {
+      "label": "Tweet audio",
+      "windowOpen": "Fenêtre ouverte (2 PM - 7 PM IST)",
+      "windowClosed": "Fenêtre fermée (2 PM - 7 PM IST)",
+      "record": "Enregistrer l'audio",
+      "stopRecording": "Arrêter l'enregistrement",
+      "upload": "Téléverser l'audio",
+      "sendOtp": "Envoyer OTP",
+      "sendingOtp": "Envoi de l'OTP...",
+      "enterOtp": "Saisissez l'OTP à 6 chiffres",
+      "verifyOtp": "Vérifier l'OTP",
+      "verifyingOtp": "Vérification...",
+      "ready": "Audio prêt : {{name}} ({{seconds}}s). Terminez la vérification OTP pour publier.",
+      "invalidFile": "Fichier audio invalide.",
+      "recordingNotSupported": "L'enregistrement audio n'est pas pris en charge dans ce navigateur.",
+      "permissionRequired": "L'autorisation du micro est nécessaire pour enregistrer l'audio.",
+      "selectFirst": "Sélectionnez ou enregistrez d'abord un fichier audio.",
+      "windowError": "Les tweets audio ne sont autorisés qu'entre 2 PM et 7 PM IST.",
+      "otpSent": "OTP envoyé à votre e-mail enregistré.",
+      "otpFailed": "Échec de l'envoi de l'OTP.",
+      "otpInvalid": "Saisissez un OTP valide à 6 chiffres.",
+      "otpVerified": "OTP vérifié avec succès.",
+      "otpVerifyFailed": "La vérification de l'OTP a échoué.",
+      "postFailed": "Échec de la publication du tweet audio.",
+      "postButton": "Publier un tweet audio",
+      "posting": "Publication de l'audio...",
+      "fallbackContent": "Tweet audio",
+      "sizeError": "Le fichier audio doit faire 100 Mo ou moins.",
+      "durationError": "La durée de l'audio doit être de 5 minutes ou moins.",
+      "durationReadError": "Impossible de valider la durée de l'audio.",
+      "readError": "Impossible de lire le fichier audio sélectionné.",
+      "useRecordedError": "Impossible d'utiliser l'audio enregistré.",
+      "recordingStarted": "Enregistrement démarré.",
+      "noSupport": "Votre navigateur ne prend pas en charge la lecture audio."
+    }
+  },
+  "profile": {
+    "postsCount_one": "{{count}} publication",
+    "postsCount_other": "{{count}} publications",
+    "editProfile": "Modifier le profil",
+    "joined": "A rejoint {{date}}",
+    "enableKeywordNotifications": "Activer les notifications par mot-clé",
+    "keywordNotificationsDesc": "Alertes pour les tweets sur le cricket ou la science.",
+    "toggleOn": "ACTIVÉ",
+    "toggleOff": "DÉSACTIVÉ",
+    "loginHistory": {
+      "title": "Login History",
+      "device": "Device",
+      "browser": "Browser",
+      "os": "OS",
+      "ip": "IP",
+      "dateTime": "Date & Time",
+      "empty": "No login activity yet.",
+      "loadMore": "Load more"
+    },
+    "tabs": {
+      "posts": "Publications",
+      "replies": "Réponses",
+      "highlights": "Moments forts",
+      "articles": "Articles",
+      "media": "Médias"
+    },
+    "empty": {
+      "posts": {
+        "title": "Vous n'avez pas encore publié",
+        "subtitle": "Lorsque vous publierez, cela apparaîtra ici."
+      },
+      "replies": {
+        "title": "Vous n'avez pas encore répondu",
+        "subtitle": "Lorsque vous répondrez à une publication, cela apparaîtra ici."
+      },
+      "highlights": {
+        "title": "Lumières, caméra … pièces jointes !",
+        "subtitle": "Lorsque vous publierez des photos ou des vidéos, elles apparaîtront ici."
+      },
+      "articles": {
+        "title": "Vous n'avez écrit aucun article",
+        "subtitle": "Lorsque vous écrirez des articles, ils apparaîtront ici."
+      },
+      "media": {
+        "title": "Lumières, caméra … pièces jointes !",
+        "subtitle": "Lorsque vous publierez des photos ou des vidéos, elles apparaîtront ici."
+      }
+    }
+  },
+  "editProfile": {
+    "title": "Modifier le profil",
+    "save": "Enregistrer",
+    "saving": "Enregistrement...",
+    "nameLabel": "Nom",
+    "bioLabel": "Bio",
+    "locationLabel": "Localisation",
+    "websiteLabel": "Site Web",
+    "displayNamePlaceholder": "Votre nom d'affichage",
+    "bioPlaceholder": "Parlez de vous au monde",
+    "locationPlaceholder": "Où êtes-vous ?",
+    "websitePlaceholder": "URL de votre site"
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "currentPlan": "Forfait actuel : {{plan}}",
+    "paymentWindowInfo": "Les paiements sont disponibles uniquement entre 10 AM et 11 AM IST.",
+    "unlimited": "Illimité",
+    "tweetLimitLabel": "Limite de tweets : {{limit}}",
+    "renewsEvery_one": "Renouvellement tous les {{count}} mois",
+    "renewsEvery_other": "Renouvellement tous les {{count}} mois",
+    "freePlan": "Forfait gratuit",
+    "subscribe": "S'abonner",
+    "currentPlanButton": "Forfait actuel",
+    "unavailable": "Indisponible",
+    "loginRequired": "Veuillez vous connecter pour vous abonner.",
+    "paymentWindowClosed": "Les paiements sont autorisés uniquement entre 10 AM et 11 AM IST.",
+    "gatewayFailed": "Impossible de charger la passerelle de paiement.",
+    "paymentOpened": "La fenêtre de paiement est ouverte. Finalisez le paiement pour activer.",
+    "paymentStartFailed": "Impossible de démarrer le paiement. Veuillez réessayer."
+  },
+  "forgot": {
+    "title": "Mot de passe oublié",
+    "description": "Saisissez l'e-mail ou le numéro de téléphone lié à votre compte.",
+    "placeholder": "E-mail ou numéro de téléphone",
+    "sendButton": "Envoyer un nouveau mot de passe",
+    "sending": "Envoi...",
+    "limitInfo": "Les demandes de réinitialisation sont limitées à une fois par jour.",
+    "success": "Si un compte existe, un mot de passe a été envoyé.",
+    "errorEmpty": "Veuillez saisir votre e-mail ou numéro de téléphone.",
+    "errorTooMany": "Vous ne pouvez utiliser cette option qu'une fois par jour.",
+    "errorGeneric": "Une erreur s'est produite. Veuillez réessayer plus tard."
+  },
+  "language": {
+    "title": "Langue",
+    "description": "Choisissez votre langue préférée. La vérification OTP est requise.",
+    "current": "Langue actuelle : {{language}}",
+    "selectLabel": "Sélectionner la langue",
+    "otpTitle": "Vérifier le changement de langue",
+    "otpDescriptionEmail": "Saisissez le code envoyé à votre e-mail enregistré.",
+    "otpDescriptionSms": "Saisissez le code envoyé à votre numéro de mobile enregistré.",
+    "otpPlaceholder": "Saisissez l'OTP à 6 chiffres",
+    "sendOtp": "Envoyer OTP",
+    "sendingOtp": "Envoi de l'OTP...",
+    "verifyOtp": "Vérifier OTP",
+    "verifyingOtp": "Vérification...",
+    "cancel": "Annuler",
+    "otpSent": "Si éligible, un code a été envoyé.",
+    "otpSendFailed": "Impossible d'envoyer l'OTP. Veuillez réessayer.",
+    "otpVerifyFailed": "La vérification de l'OTP a échoué.",
+    "otpInvalid": "Saisissez un OTP valide à 6 chiffres.",
+    "updateSuccess": "Langue mise à jour.",
+    "updateFailed": "Impossible de mettre à jour la langue.",
+    "resend": "Renvoyer l'OTP"
+  },
+  "notifications": {
+    "keywordAlert": "Alerte mot-clé"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "or": "或",
+    "orUpper": "或",
+    "save": "保存",
+    "saving": "保存中...",
+    "post": "发布",
+    "posting": "发布中...",
+    "cancel": "取消",
+    "close": "关闭",
+    "search": "搜索"
+  },
+  "languages": {
+    "english": "英语",
+    "spanish": "西班牙语",
+    "hindi": "印地语",
+    "portuguese": "葡萄牙语",
+    "chinese": "中文",
+    "french": "法语"
+  },
+  "landing": {
+    "happeningNow": "正在发生",
+    "joinToday": "立即加入。",
+    "signUpGoogle": "使用 Google 注册",
+    "signUpApple": "使用 Apple 注册",
+    "createAccount": "创建账号",
+    "alreadyHaveAccount": "已有账号？",
+    "logIn": "登录"
+  },
+  "legal": {
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策",
+    "cookieUse": "Cookie 使用",
+    "cookiePolicy": "Cookie 政策",
+    "accessibility": "无障碍",
+    "adsInfo": "广告信息",
+    "signupAgreement": "注册即表示你同意 <1>服务条款</1> 和 <3>隐私政策</3>，包括 <5>Cookie 使用</5>。"
+  },
+  "auth": {
+    "signInTitle": "登录 X",
+    "createAccountTitle": "创建你的账号",
+    "displayNameLabel": "显示名称",
+    "usernameLabel": "用户名",
+    "emailLabel": "邮箱",
+    "passwordLabel": "密码",
+    "displayNamePlaceholder": "你的显示名称",
+    "usernamePlaceholder": "用户名",
+    "emailPlaceholder": "输入你的邮箱",
+    "passwordPlaceholder": "输入你的密码",
+    "signInButton": "登录",
+    "createAccountButton": "创建账号",
+    "signingIn": "正在登录...",
+    "creatingAccount": "正在创建账号...",
+    "noAccount": "没有账号？",
+    "hasAccount": "已有账号？",
+    "switchToSignup": "注册",
+    "switchToSignin": "登录",
+    "authFailed": "认证失败。请重试。",
+    "loginSecurityTitle": "Verify your login",
+    "loginSecurityDescription": "Enter the 6-digit code sent to your registered email."
+  },
+  "validation": {
+    "emailRequired": "邮箱为必填项",
+    "emailInvalid": "请输入有效的邮箱",
+    "passwordRequired": "密码为必填项",
+    "passwordMin": "密码至少需要 6 个字符",
+    "usernameRequired": "用户名为必填项",
+    "usernameMin": "用户名至少需要 3 个字符",
+    "usernamePattern": "用户名只能包含字母、数字和下划线",
+    "displayNameRequired": "显示名称为必填项",
+    "displayNameMax": "显示名称最多 50 个字符",
+    "bioMax": "简介最多 160 个字符",
+    "websiteMax": "网站最多 100 个字符",
+    "locationMax": "位置最多 30 个字符",
+    "profileUpdateFailed": "更新个人资料失败。请重试。",
+    "generic": "出现错误。请稍后重试。"
+  },
+  "feed": {
+    "home": "首页",
+    "forYou": "为你推荐",
+    "following": "正在关注"
+  },
+  "sidebar": {
+    "home": "首页",
+    "explore": "探索",
+    "notifications": "通知",
+    "messages": "消息",
+    "bookmarks": "书签",
+    "profile": "个人资料",
+    "more": "更多",
+    "post": "发布",
+    "settings": "设置",
+    "logout": "退出 @{{username}}"
+  },
+  "rightSidebar": {
+    "searchPlaceholder": "搜索",
+    "subscribeTitle": "订阅高级版",
+    "subscribeBody": "订阅以解锁新功能，并在符合条件时获得收入分成。",
+    "subscribeButton": "订阅",
+    "youMightLike": "你可能喜欢",
+    "follow": "关注",
+    "showMore": "显示更多"
+  },
+  "footer": {
+    "copy": "(c) 2026 X AMK"
+  },
+  "tweet": {
+    "placeholder": "发生了什么？",
+    "everyoneCanReply": "所有人都可以回复",
+    "imageAlt": "推文图片",
+    "userFallback": "用户",
+    "handleFallback": "user",
+    "audio": {
+      "label": "音频推文",
+      "windowOpen": "窗口开启（2 PM - 7 PM IST）",
+      "windowClosed": "窗口关闭（2 PM - 7 PM IST）",
+      "record": "录制音频",
+      "stopRecording": "停止录制",
+      "upload": "上传音频",
+      "sendOtp": "发送 OTP",
+      "sendingOtp": "正在发送 OTP...",
+      "enterOtp": "输入 6 位 OTP",
+      "verifyOtp": "验证 OTP",
+      "verifyingOtp": "正在验证...",
+      "ready": "音频已准备：{{name}}（{{seconds}}秒）。完成 OTP 验证后发布。",
+      "invalidFile": "无效的音频文件。",
+      "recordingNotSupported": "此浏览器不支持音频录制。",
+      "permissionRequired": "录制音频需要麦克风权限。",
+      "selectFirst": "请先选择或录制音频文件。",
+      "windowError": "音频推文仅允许在 2 PM 到 7 PM IST 之间发布。",
+      "otpSent": "OTP 已发送到你注册的邮箱。",
+      "otpFailed": "发送 OTP 失败。",
+      "otpInvalid": "请输入有效的 6 位 OTP。",
+      "otpVerified": "OTP 验证成功。",
+      "otpVerifyFailed": "OTP 验证失败。",
+      "postFailed": "发布音频推文失败。",
+      "postButton": "发布音频推文",
+      "posting": "正在发布音频...",
+      "fallbackContent": "音频推文",
+      "sizeError": "音频文件必须小于或等于 100MB。",
+      "durationError": "音频时长必须小于或等于 5 分钟。",
+      "durationReadError": "无法验证音频时长。",
+      "readError": "无法读取所选音频文件。",
+      "useRecordedError": "无法使用录制的音频。",
+      "recordingStarted": "录制已开始。",
+      "noSupport": "你的浏览器不支持音频播放。"
+    }
+  },
+  "profile": {
+    "postsCount_one": "{{count}} 条推文",
+    "postsCount_other": "{{count}} 条推文",
+    "editProfile": "编辑资料",
+    "joined": "加入于 {{date}}",
+    "enableKeywordNotifications": "启用关键词通知",
+    "keywordNotificationsDesc": "关于板球或科学推文的提醒。",
+    "toggleOn": "开启",
+    "toggleOff": "关闭",
+    "loginHistory": {
+      "title": "Login History",
+      "device": "Device",
+      "browser": "Browser",
+      "os": "OS",
+      "ip": "IP",
+      "dateTime": "Date & Time",
+      "empty": "No login activity yet.",
+      "loadMore": "Load more"
+    },
+    "tabs": {
+      "posts": "推文",
+      "replies": "回复",
+      "highlights": "精选",
+      "articles": "文章",
+      "media": "媒体"
+    },
+    "empty": {
+      "posts": {
+        "title": "你还没有发过推文",
+        "subtitle": "当你发布推文时，它会显示在这里。"
+      },
+      "replies": {
+        "title": "你还没有回复过",
+        "subtitle": "当你回复推文时，它会显示在这里。"
+      },
+      "highlights": {
+        "title": "灯光，摄影……附件！",
+        "subtitle": "当你发布照片或视频时，它们会显示在这里。"
+      },
+      "articles": {
+        "title": "你还没有写任何文章",
+        "subtitle": "当你写文章时，它们会显示在这里。"
+      },
+      "media": {
+        "title": "灯光，摄影……附件！",
+        "subtitle": "当你发布照片或视频时，它们会显示在这里。"
+      }
+    }
+  },
+  "editProfile": {
+    "title": "编辑资料",
+    "save": "保存",
+    "saving": "保存中...",
+    "nameLabel": "姓名",
+    "bioLabel": "简介",
+    "locationLabel": "位置",
+    "websiteLabel": "网站",
+    "displayNamePlaceholder": "你的显示名称",
+    "bioPlaceholder": "向大家介绍你自己",
+    "locationPlaceholder": "你在哪里？",
+    "websitePlaceholder": "你的网站链接"
+  },
+  "pricing": {
+    "title": "定价",
+    "currentPlan": "当前套餐：{{plan}}",
+    "paymentWindowInfo": "付款仅在 10 AM 到 11 AM IST 之间开放。",
+    "unlimited": "无限",
+    "tweetLimitLabel": "推文限制：{{limit}}",
+    "renewsEvery_one": "每 {{count}} 个月续订",
+    "renewsEvery_other": "每 {{count}} 个月续订",
+    "freePlan": "免费套餐",
+    "subscribe": "订阅",
+    "currentPlanButton": "当前套餐",
+    "unavailable": "不可用",
+    "loginRequired": "请登录后订阅。",
+    "paymentWindowClosed": "付款仅允许在 10 AM 到 11 AM IST 之间。",
+    "gatewayFailed": "无法加载支付网关。",
+    "paymentOpened": "支付窗口已打开。完成付款以激活。",
+    "paymentStartFailed": "无法开始支付。请重试。"
+  },
+  "forgot": {
+    "title": "忘记密码",
+    "description": "输入与你的账户关联的邮箱或手机号。",
+    "placeholder": "邮箱或手机号",
+    "sendButton": "发送新密码",
+    "sending": "发送中...",
+    "limitInfo": "重置请求每天仅限一次。",
+    "success": "如果存在该账户，密码已发送。",
+    "errorEmpty": "请输入你的邮箱或手机号。",
+    "errorTooMany": "此选项每天只能使用一次。",
+    "errorGeneric": "出现错误。请稍后重试。"
+  },
+  "language": {
+    "title": "语言",
+    "description": "选择你偏好的语言。需要 OTP 验证。",
+    "current": "当前语言：{{language}}",
+    "selectLabel": "选择语言",
+    "otpTitle": "验证语言更改",
+    "otpDescriptionEmail": "输入发送到你注册邮箱的验证码。",
+    "otpDescriptionSms": "输入发送到你注册手机号的验证码。",
+    "otpPlaceholder": "输入 6 位 OTP",
+    "sendOtp": "发送 OTP",
+    "sendingOtp": "正在发送 OTP...",
+    "verifyOtp": "验证 OTP",
+    "verifyingOtp": "正在验证...",
+    "cancel": "取消",
+    "otpSent": "如符合条件，验证码已发送。",
+    "otpSendFailed": "无法发送 OTP。请重试。",
+    "otpVerifyFailed": "OTP 验证失败。",
+    "otpInvalid": "请输入有效的 6 位 OTP。",
+    "updateSuccess": "语言已更新。",
+    "updateFailed": "无法更新语言。",
+    "resend": "重新发送 OTP"
+  },
+  "notifications": {
+    "keywordAlert": "关键词提醒"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "or": "या",
+    "orUpper": "या",
+    "save": "सेव करें",
+    "saving": "सेव हो रहा है...",
+    "post": "पोस्ट करें",
+    "posting": "पोस्ट हो रहा है...",
+    "cancel": "रद्द करें",
+    "close": "बंद करें",
+    "search": "खोजें"
+  },
+  "languages": {
+    "english": "अंग्रेज़ी",
+    "spanish": "स्पैनिश",
+    "hindi": "हिंदी",
+    "portuguese": "पुर्तगाली",
+    "chinese": "चीनी",
+    "french": "फ़्रेंच"
+  },
+  "landing": {
+    "happeningNow": "अभी हो रहा है",
+    "joinToday": "आज ही जुड़ें.",
+    "signUpGoogle": "Google के साथ साइन अप करें",
+    "signUpApple": "Apple के साथ साइन अप करें",
+    "createAccount": "खाता बनाएं",
+    "alreadyHaveAccount": "पहले से खाता है?",
+    "logIn": "लॉग इन करें"
+  },
+  "legal": {
+    "termsOfService": "सेवा की शर्तें",
+    "privacyPolicy": "गोपनीयता नीति",
+    "cookieUse": "कुकी उपयोग",
+    "cookiePolicy": "कुकी नीति",
+    "accessibility": "सुलभता",
+    "adsInfo": "विज्ञापन जानकारी",
+    "signupAgreement": "साइन अप करके, आप <1>सेवा की शर्तें</1> और <3>गोपनीयता नीति</3> से सहमत होते हैं, जिसमें <5>कुकी उपयोग</5> शामिल है।"
+  },
+  "auth": {
+    "signInTitle": "X में साइन इन करें",
+    "createAccountTitle": "अपना खाता बनाएं",
+    "displayNameLabel": "डिस्प्ले नाम",
+    "usernameLabel": "यूज़रनेम",
+    "emailLabel": "ईमेल",
+    "passwordLabel": "पासवर्ड",
+    "displayNamePlaceholder": "आपका डिस्प्ले नाम",
+    "usernamePlaceholder": "यूज़रनेम",
+    "emailPlaceholder": "अपना ईमेल दर्ज करें",
+    "passwordPlaceholder": "अपना पासवर्ड दर्ज करें",
+    "signInButton": "साइन इन",
+    "createAccountButton": "खाता बनाएं",
+    "signingIn": "साइन इन हो रहा है...",
+    "creatingAccount": "खाता बनाया जा रहा है...",
+    "noAccount": "खाता नहीं है?",
+    "hasAccount": "पहले से खाता है?",
+    "switchToSignup": "साइन अप करें",
+    "switchToSignin": "साइन इन करें",
+    "authFailed": "प्रमाणीकरण विफल हुआ। कृपया फिर से प्रयास करें।",
+    "loginSecurityTitle": "Verify your login",
+    "loginSecurityDescription": "Enter the 6-digit code sent to your registered email."
+  },
+  "validation": {
+    "emailRequired": "ईमेल आवश्यक है",
+    "emailInvalid": "कृपया मान्य ईमेल दर्ज करें",
+    "passwordRequired": "पासवर्ड आवश्यक है",
+    "passwordMin": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
+    "usernameRequired": "यूज़रनेम आवश्यक है",
+    "usernameMin": "यूज़रनेम कम से कम 3 अक्षरों का होना चाहिए",
+    "usernamePattern": "यूज़रनेम में केवल अक्षर, नंबर और अंडरस्कोर हो सकते हैं",
+    "displayNameRequired": "डिस्प्ले नाम आवश्यक है",
+    "displayNameMax": "डिस्प्ले नाम 50 अक्षरों या उससे कम होना चाहिए",
+    "bioMax": "बायो 160 अक्षरों या उससे कम होना चाहिए",
+    "websiteMax": "वेबसाइट 100 अक्षरों या उससे कम होनी चाहिए",
+    "locationMax": "लोकेशन 30 अक्षरों या उससे कम होनी चाहिए",
+    "profileUpdateFailed": "प्रोफ़ाइल अपडेट नहीं हो सकी। कृपया फिर से प्रयास करें।",
+    "generic": "कुछ गलत हो गया। कृपया बाद में फिर से प्रयास करें।"
+  },
+  "feed": {
+    "home": "होम",
+    "forYou": "आपके लिए",
+    "following": "फ़ॉलोइंग"
+  },
+  "sidebar": {
+    "home": "होम",
+    "explore": "एक्सप्लोर",
+    "notifications": "सूचनाएं",
+    "messages": "संदेश",
+    "bookmarks": "बुकमार्क्स",
+    "profile": "प्रोफ़ाइल",
+    "more": "और",
+    "post": "पोस्ट",
+    "settings": "सेटिंग्स",
+    "logout": "लॉग आउट @{{username}}"
+  },
+  "rightSidebar": {
+    "searchPlaceholder": "खोजें",
+    "subscribeTitle": "प्रीमियम की सदस्यता लें",
+    "subscribeBody": "नई सुविधाएँ अनलॉक करने के लिए सदस्यता लें और पात्र होने पर राजस्व का हिस्सा प्राप्त करें।",
+    "subscribeButton": "सदस्यता लें",
+    "youMightLike": "आपको पसंद आ सकता है",
+    "follow": "फ़ॉलो करें",
+    "showMore": "और दिखाएँ"
+  },
+  "footer": {
+    "copy": "(c) 2026 X AMK"
+  },
+  "tweet": {
+    "placeholder": "क्या हो रहा है?",
+    "everyoneCanReply": "हर कोई जवाब दे सकता है",
+    "imageAlt": "ट्वीट छवि",
+    "userFallback": "यूज़र",
+    "handleFallback": "user",
+    "audio": {
+      "label": "ऑडियो ट्वीट",
+      "windowOpen": "विंडो खुली है (2 PM - 7 PM IST)",
+      "windowClosed": "विंडो बंद है (2 PM - 7 PM IST)",
+      "record": "ऑडियो रिकॉर्ड करें",
+      "stopRecording": "रिकॉर्डिंग रोकें",
+      "upload": "ऑडियो अपलोड करें",
+      "sendOtp": "OTP भेजें",
+      "sendingOtp": "OTP भेजा जा रहा है...",
+      "enterOtp": "6-अंकों का OTP दर्ज करें",
+      "verifyOtp": "OTP सत्यापित करें",
+      "verifyingOtp": "सत्यापन हो रहा है...",
+      "ready": "ऑडियो तैयार है: {{name}} ({{seconds}}s). पोस्ट करने के लिए OTP सत्यापन पूरा करें।",
+      "invalidFile": "अमान्य ऑडियो फ़ाइल।",
+      "recordingNotSupported": "इस ब्राउज़र में ऑडियो रिकॉर्डिंग समर्थित नहीं है।",
+      "permissionRequired": "ऑडियो रिकॉर्ड करने के लिए माइक्रोफोन अनुमति आवश्यक है।",
+      "selectFirst": "पहले ऑडियो फ़ाइल चुनें या रिकॉर्ड करें।",
+      "windowError": "ऑडियो ट्वीट केवल 2 PM से 7 PM IST के बीच अनुमत हैं।",
+      "otpSent": "आपके पंजीकृत ईमेल पर OTP भेजा गया है।",
+      "otpFailed": "OTP भेजने में विफल।",
+      "otpInvalid": "मान्य 6-अंकों का OTP दर्ज करें।",
+      "otpVerified": "OTP सफलतापूर्वक सत्यापित हुआ।",
+      "otpVerifyFailed": "OTP सत्यापन विफल हुआ।",
+      "postFailed": "ऑडियो ट्वीट पोस्ट नहीं हो सका।",
+      "postButton": "ऑडियो ट्वीट पोस्ट करें",
+      "posting": "ऑडियो पोस्ट हो रहा है...",
+      "fallbackContent": "ऑडियो ट्वीट",
+      "sizeError": "ऑडियो फ़ाइल 100MB या उससे कम होनी चाहिए।",
+      "durationError": "ऑडियो अवधि 5 मिनट या उससे कम होनी चाहिए।",
+      "durationReadError": "ऑडियो अवधि की जांच नहीं हो सकी।",
+      "readError": "चयनित ऑडियो फ़ाइल पढ़ी नहीं जा सकी।",
+      "useRecordedError": "रिकॉर्ड किया गया ऑडियो उपयोग नहीं हो सका।",
+      "recordingStarted": "रिकॉर्डिंग शुरू हो गई।",
+      "noSupport": "आपका ब्राउज़र ऑडियो प्लेबैक का समर्थन नहीं करता।"
+    }
+  },
+  "profile": {
+    "postsCount_one": "{{count}} पोस्ट",
+    "postsCount_other": "{{count}} पोस्ट",
+    "editProfile": "प्रोफ़ाइल संपादित करें",
+    "joined": "जुड़े {{date}}",
+    "enableKeywordNotifications": "कीवर्ड नोटिफिकेशन सक्षम करें",
+    "keywordNotificationsDesc": "क्रिकेट या विज्ञान से जुड़े ट्वीट्स के लिए अलर्ट।",
+    "toggleOn": "चालू",
+    "toggleOff": "बंद",
+    "loginHistory": {
+      "title": "Login History",
+      "device": "Device",
+      "browser": "Browser",
+      "os": "OS",
+      "ip": "IP",
+      "dateTime": "Date & Time",
+      "empty": "No login activity yet.",
+      "loadMore": "Load more"
+    },
+    "tabs": {
+      "posts": "पोस्ट्स",
+      "replies": "जवाब",
+      "highlights": "हाइलाइट्स",
+      "articles": "लेख",
+      "media": "मीडिया"
+    },
+    "empty": {
+      "posts": {
+        "title": "आपने अभी तक पोस्ट नहीं किया है",
+        "subtitle": "जब आप पोस्ट करेंगे, वह यहां दिखाई देगा।"
+      },
+      "replies": {
+        "title": "आपने अभी तक जवाब नहीं दिया है",
+        "subtitle": "जब आप किसी पोस्ट पर जवाब देंगे, वह यहां दिखाई देगा।"
+      },
+      "highlights": {
+        "title": "लाइट्स, कैमरा … अटैचमेंट्स!",
+        "subtitle": "जब आप फोटो या वीडियो पोस्ट करेंगे, वे यहां दिखाई देंगे।"
+      },
+      "articles": {
+        "title": "आपने अभी तक कोई लेख नहीं लिखा है",
+        "subtitle": "जब आप लेख लिखेंगे, वे यहां दिखाई देंगे।"
+      },
+      "media": {
+        "title": "लाइट्स, कैमरा … अटैचमेंट्स!",
+        "subtitle": "जब आप फोटो या वीडियो पोस्ट करेंगे, वे यहां दिखाई देंगे।"
+      }
+    }
+  },
+  "editProfile": {
+    "title": "प्रोफ़ाइल संपादित करें",
+    "save": "सेव करें",
+    "saving": "सेव हो रहा है...",
+    "nameLabel": "नाम",
+    "bioLabel": "बायो",
+    "locationLabel": "लोकेशन",
+    "websiteLabel": "वेबसाइट",
+    "displayNamePlaceholder": "आपका डिस्प्ले नाम",
+    "bioPlaceholder": "अपने बारे में बताएं",
+    "locationPlaceholder": "आप कहाँ हैं?",
+    "websitePlaceholder": "आपकी वेबसाइट का URL"
+  },
+  "pricing": {
+    "title": "मूल्य",
+    "currentPlan": "वर्तमान योजना: {{plan}}",
+    "paymentWindowInfo": "भुगतान केवल 10 AM से 11 AM IST के बीच उपलब्ध हैं।",
+    "unlimited": "असीमित",
+    "tweetLimitLabel": "ट्वीट सीमा: {{limit}}",
+    "renewsEvery_one": "हर {{count}} महीने में नवीनीकृत",
+    "renewsEvery_other": "हर {{count}} महीनों में नवीनीकृत",
+    "freePlan": "मुफ़्त योजना",
+    "subscribe": "सदस्यता लें",
+    "currentPlanButton": "वर्तमान योजना",
+    "unavailable": "उपलब्ध नहीं",
+    "loginRequired": "सदस्यता के लिए लॉग इन करें।",
+    "paymentWindowClosed": "भुगतान केवल 10 AM से 11 AM IST के बीच अनुमत हैं।",
+    "gatewayFailed": "पेमेंट गेटवे लोड नहीं हो सका।",
+    "paymentOpened": "पेमेंट विंडो खुल गई है। सक्रिय करने के लिए भुगतान पूरा करें।",
+    "paymentStartFailed": "भुगतान शुरू नहीं हो सका। कृपया फिर से प्रयास करें।"
+  },
+  "forgot": {
+    "title": "पासवर्ड भूल गए",
+    "description": "अपने खाते से जुड़ा ईमेल या फोन नंबर दर्ज करें।",
+    "placeholder": "ईमेल या फोन नंबर",
+    "sendButton": "नया पासवर्ड भेजें",
+    "sending": "भेजा जा रहा है...",
+    "limitInfo": "रीसेट अनुरोध दिन में केवल एक बार कर सकते हैं।",
+    "success": "यदि खाता मौजूद है, तो पासवर्ड भेज दिया गया है।",
+    "errorEmpty": "कृपया अपना ईमेल या फोन नंबर दर्ज करें।",
+    "errorTooMany": "आप इस विकल्प का उपयोग दिन में केवल एक बार कर सकते हैं।",
+    "errorGeneric": "कुछ गलत हो गया। कृपया बाद में फिर से प्रयास करें।"
+  },
+  "language": {
+    "title": "भाषा",
+    "description": "अपनी पसंदीदा भाषा चुनें। OTP सत्यापन आवश्यक है।",
+    "current": "वर्तमान भाषा: {{language}}",
+    "selectLabel": "भाषा चुनें",
+    "otpTitle": "भाषा परिवर्तन सत्यापित करें",
+    "otpDescriptionEmail": "अपने पंजीकृत ईमेल पर भेजा गया कोड दर्ज करें।",
+    "otpDescriptionSms": "अपने पंजीकृत मोबाइल नंबर पर भेजा गया कोड दर्ज करें।",
+    "otpPlaceholder": "6-अंकों का OTP दर्ज करें",
+    "sendOtp": "OTP भेजें",
+    "sendingOtp": "OTP भेजा जा रहा है...",
+    "verifyOtp": "OTP सत्यापित करें",
+    "verifyingOtp": "सत्यापन हो रहा है...",
+    "cancel": "रद्द करें",
+    "otpSent": "यदि पात्र है, तो एक कोड भेजा गया है।",
+    "otpSendFailed": "OTP भेजा नहीं जा सका। कृपया फिर से प्रयास करें।",
+    "otpVerifyFailed": "OTP सत्यापन विफल हुआ।",
+    "otpInvalid": "मान्य 6-अंकों का OTP दर्ज करें।",
+    "updateSuccess": "भाषा अपडेट हो गई।",
+    "updateFailed": "भाषा अपडेट नहीं हो सकी।",
+    "resend": "OTP फिर से भेजें"
+  },
+  "notifications": {
+    "keywordAlert": "कीवर्ड अलर्ट"
+  }
+}
